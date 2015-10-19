@@ -1,3 +1,4 @@
+int progress;
 void setup()
 {
   background (9,0,54);
@@ -7,7 +8,9 @@ void setup()
 
 void draw()
 {
-  //your code here
+  if (framecount%5==0)
+    progress++;
+  rect (500,500,0,progress);
 }
 
 
@@ -24,7 +27,9 @@ class Snowflake
   Snowflake()
   {
     int myY;
-    myY=myY +(int)(Math.random()*30+10;
+    myY= y;
+    y=0;
+    myY = myY +(int)(Math.random()*30)+10;
   fill(238,238,255);  //class member variable initializations
 
   }

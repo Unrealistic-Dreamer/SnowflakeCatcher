@@ -1,4 +1,5 @@
-int progress;
+Snowflake[]Flakes;
+
 void setup()
 {
   background (9,0,54);
@@ -11,14 +12,28 @@ void setup()
   fill (0);
   ellipse(270,300, 20, 20);
   ellipse(230,300, 20, 20);
+
+  Flakes = new Snowflake[100];
+
+  
+  for (int i=1; i< Flakes.length; i++)
+    {
+      Flakes[i] = new Snowflake();
+    }
 }
 
 
 void draw()
 {
-  /*if (framecount%5==0)
-    progress++;
- Snowflake (500,500,0,progress);*/
+ 
+background(9,0,54);
+  
+    for (int i=1; i< Flakes.length; i++)
+    {
+      Flakes[i].move();
+     
+    }
+
 }
 
 
@@ -30,26 +45,19 @@ void mouseDragged()
 
 class Snowflake
 {
+  int myX, myY;
+  boolean isMoving;
   //class member variable declarations
   
   public Snowflake()
   {
-   /* int myY, myX;
-    myY= y;
-    y=0;
-    myY = myY +(int)(Math.random()*30)+10;
-    myX= x;
-    x=0;
-    myX = myX +(int)(Math.random()*499)+1;
-  fill(238,238,255);
-  ellipse(x, y, 50, 50);*/  //class member variable initializations
-
+   myY = myY +(int)(Math.random()*30)+10;
+   myX = myX +(int)(Math.random()*499)+1;
   }
   
   void show()
   {
-    //insert wno
-    //your code here
+    ellipse(myX, myY, 5, 5);
   }
   
   void lookDown()

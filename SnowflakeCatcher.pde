@@ -25,8 +25,6 @@ void setup()
 
 void draw()
 {
- 
-background(9,0,54);
   
     for (int i=1; i< Flakes.length; i++)
     {
@@ -50,20 +48,23 @@ class Snowflake
   //class member variable declarations
   
   public Snowflake()
-  {
-   myY = myY +(int)(Math.random()*30)+10;
-   myX = myX +(int)(Math.random()*499)+1;
-  }
+    {
+      myY = myY +(int)(Math.random()*30)+10;
+      myX = myX +(int)(Math.random()*499)+1;
+      fill (225);
+      ellipse(myX, myY, 5, 5);
+    }
   
   void show()
-  {
-    ellipse(myX, myY, 5, 5);
-  }
+    {
+      fill (225);
+      ellipse(myX, myY, 5, 5);
+    }
   
   void lookDown()
-  {
+    {
     //your code here
-  }
+    }
   
   void erase()
   {
@@ -72,7 +73,23 @@ class Snowflake
   
   void move()
   {
-    //your code here
+   if (myX <= 500)
+   myX = myX- (int)(Math.random()*5)+1;
+   else 
+   myX = myX+ (int)(Math.random()*5)-1;
+   if (myX >= 0)
+   myX = myX = myX+ (int)(Math.random()*5)-1;
+   else 
+   myX = myX+ (int)(Math.random()*5)+1;
+
+    if (myY <= 500)
+        myY = myY- (int)(Math.random()*5)+1;
+      else 
+        myY = myY+ (int)(Math.random()*5)+2;
+      if (myY >= 0)
+        myY = myY = myY+ (int)(Math.random()*5)-1;
+      else 
+        myY = myY+ (int)(Math.random()*5)+1;
   }
   
   void wrap()

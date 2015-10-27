@@ -1,4 +1,5 @@
 Snowflake[]Flakes;
+boolean isMoving = myY<=
 
 void setup()
 {
@@ -14,12 +15,12 @@ void setup()
   ellipse(230,300, 20, 20);
 
   Flakes = new Snowflake[100];
-
   
   for (int i=1; i< Flakes.length; i++)
     {
       Flakes[i] = new Snowflake();
     }
+
 }
 
 
@@ -68,28 +69,31 @@ class Snowflake
   
   void erase()
   {
-    //your code here
+   fill(225);
+   ellipse(,, 10, 10);
   }
   
   void move()
   {
    if (myX <= 500)
-   myX = myX- (int)(Math.random()*5)+1;
+   myX = myX- (int)(Math.random()*15)+1;
    else 
-   myX = myX+ (int)(Math.random()*5)-1;
+   myX = myX+ (int)(Math.random()*15)-1;
+   
    if (myX >= 0)
-   myX = myX = myX+ (int)(Math.random()*5)-1;
+   myX = myX+ (int)(Math.random()*15)-5;
    else 
-   myX = myX+ (int)(Math.random()*5)+1;
-
-    if (myY <= 500)
-        myY = myY- (int)(Math.random()*5)+1;
-      else 
-        myY = myY+ (int)(Math.random()*5)+2;
-      if (myY >= 0)
-        myY = myY = myY+ (int)(Math.random()*5)-1;
-      else 
-        myY = myY+ (int)(Math.random()*5)+1;
+   myX  = myX+ (int)(Math.random()*15)+1;
+   
+   if (myY <= 500)
+   myY = myY- (int)(Math.random()*15)+1;
+   else 
+   myY = myY+ (int)(Math.random()*15)+2;
+   
+   if (myY >= 0)
+   myY = myY+ (int)(Math.random()*15)+1;
+   else 
+   myY = myY+ (int)(Math.random()*15)+1;
   }
   
   void wrap()

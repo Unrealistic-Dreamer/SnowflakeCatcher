@@ -63,8 +63,13 @@ class Snowflake
     }
   
   void lookDown()
-    {
+    {//checks if `y` is between the top and bottom of the screen,
+     //and the position just below (x,y) is not black. 
+     //If so, set `isMoving` to `false`; otherwise set `isMoving` to `true` 
     //your code here
+    if ()()
+      return true
+    else return false
     }
   
   void erase()

@@ -1,5 +1,5 @@
 Snowflake[]Flakes;
-boolean isMoving = myY<=
+boolean isMoving;
 
 void setup()
 {
@@ -67,21 +67,23 @@ class Snowflake
      //and the position just below (x,y) is not black. 
      //If so, set `isMoving` to `false`; otherwise set `isMoving` to `true` 
     //your code here
-    if ()()
-      return true
-    else return false
-    }
+    boolean isMoving (int[] Flakes)
+ for(int i =0; i < Flakes.length; i++)
+    if(Flakes[i]>5)
+ return false;
+
+  }
   
   void erase()
   {
    fill(225);
-   ellipse(,, 10, 10);
+   ellipse(myX,myY, 10, 10);
   }
   
   void move()
   {
    if (myX <= 500)
-   myX = myX- (int)(Math.random()*15)+1;
+   myX = myX- (int)(Math.random()*15)+5;
    else 
    myX = myX+ (int)(Math.random()*15)-1;
    

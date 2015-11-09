@@ -1,5 +1,5 @@
 Snowflake[]Flakes;
-boolean isMoving;
+boolean isMoving (int[] myY);
 
 void setup()
 {
@@ -14,7 +14,7 @@ void setup()
   ellipse(270,300, 20, 20);
   ellipse(230,300, 20, 20);
 
-  Flakes = new Snowflake[100];
+  Flakes = new Snowflake[200];
   
   for (int i=1; i< Flakes.length; i++)
     {
@@ -67,10 +67,11 @@ class Snowflake
      //and the position just below (x,y) is not black. 
      //If so, set `isMoving` to `false`; otherwise set `isMoving` to `true` 
     //your code here
-    boolean isMoving (int[] Flakes)
- for(int i =0; i < Flakes.length; i++)
+    boolean isMoving (int[] myY);
+    for(int i =0; i < Flakes.length; i++)
     if(Flakes[i]>5)
- return false;
+    return true
+    return false;
 
   }
   
@@ -105,7 +106,9 @@ class Snowflake
   
   void wrap()
   {
-    //your code here
+    //which checks if the `y` coordinate is off the bottom of the screen.
+    //If it is, set `y` to 0 and generate a new random `x` coordinate
+    
   }
 }
 

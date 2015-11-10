@@ -1,5 +1,5 @@
 Snowflake[]Flakes;
-boolean isMoving (int[] myY);
+boolean isMoving;
 
 void setup()
 {
@@ -68,10 +68,13 @@ class Snowflake
      //If so, set `isMoving` to `false`; otherwise set `isMoving` to `true` 
     //your code here
     boolean isMoving (int[] myY);
+
     for(int i =0; i < Flakes.length; i++)
-    if(Flakes[i]>5)
-    return true
-    return false;
+        if(Flakes[i]>5){
+          return true;
+        }
+        else{ return false;}
+   
 
   }
   

@@ -1,5 +1,5 @@
 Snowflake[]Flakes;
-boolean isMoving;
+
 
 void setup()
 {
@@ -26,13 +26,10 @@ void setup()
 
 void draw()
 {
-  
     for (int i=1; i< Flakes.length; i++)
     {
       Flakes[i].move();
-     
     }
-
 }
 
 
@@ -66,14 +63,12 @@ class Snowflake
     {//checks if `y` is between the top and bottom of the screen,
      //and the position just below (x,y) is not black. 
      //If so, set `isMoving` to `false`; otherwise set `isMoving` to `true` 
-    //your code here
-    boolean isMoving (int[] myY);
-
-    for(int i =0; i < Flakes.length; i++)
-        if(Flakes[i]>5){
-          return true;
-        }
-        else{ return false;}
+    //your code here  b
+  
+    //for(int i =0; i < Flakes.length; i++) use || 
+        if(Flakes[i]>5)
+         {isMoving = true;}
+        else{ isMoving = false;}
    
 
   }

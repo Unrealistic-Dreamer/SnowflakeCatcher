@@ -28,7 +28,10 @@ void draw()
 {
     for (int i=1; i< Flakes.length; i++)
     {
+      Flakes[i].erase();
+      Flakes[i].lookDown();
       Flakes[i].move();
+      Flakes[i].show();
     }
 }
 
@@ -49,8 +52,7 @@ class Snowflake
     {
       myY = myY +(int)(Math.random()*30)+10;
       myX = myX +(int)(Math.random()*499)+1;
-      fill (225);
-      ellipse(myX, myY, 5, 5);
+     
     }
   
   void show()
@@ -66,40 +68,26 @@ class Snowflake
     //your code here  b
   
     //for(int i =0; i < Flakes.length; i++) use || 
-        if(Flakes[i]>5)
-         {isMoving = true;}
-        else{ isMoving = false;}
+        if(myX<=500||get (myX,myY) == color (0,0,54))
+         {isMoving = false;}
+        else{ isMoving = true;}
    
 
   }
   
   void erase()
   {
+    noStroke();
    fill(225);
    ellipse(myX,myY, 10, 10);
   }
   
   void move()
   {
-   if (myX <= 500)
-   myX = myX- (int)(Math.random()*15)+5;
-   else 
-   myX = myX+ (int)(Math.random()*15)-1;
-   
-   if (myX >= 0)
-   myX = myX+ (int)(Math.random()*15)-5;
-   else 
-   myX  = myX+ (int)(Math.random()*15)+1;
-   
-   if (myY <= 500)
-   myY = myY- (int)(Math.random()*15)+1;
-   else 
-   myY = myY+ (int)(Math.random()*15)+2;
-   
-   if (myY >= 0)
-   myY = myY+ (int)(Math.random()*15)+1;
-   else 
-   myY = myY+ (int)(Math.random()*15)+1;
+    if(isMoving==true){
+      myY=myY+2;
+
+    }
   }
   
   void wrap()

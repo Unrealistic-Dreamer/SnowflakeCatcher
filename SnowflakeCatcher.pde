@@ -1,5 +1,5 @@
 Snowflake[]Flakes;
-
+int Snowflake, myX,myY;
 
 void setup()
 {
@@ -14,11 +14,11 @@ void setup()
   ellipse(270,300, 20, 20);
   ellipse(230,300, 20, 20);
 
-  Flakes = new Snowflake[200];
+  Flakes = new Snowflake[500];
   
   for (int i=1; i< Flakes.length; i++)
     {
-      Flakes[i] = new Snowflake();
+      Flakes[i] = new Snowflake();                                                                                                                                                                                                                                                                                                                                                                                                                               
     }
 
 }
@@ -27,10 +27,10 @@ void setup()
 void draw()
 {
     for (int i=1; i< Flakes.length; i++)
-    {
-      Flakes[i].erase();
+    { 
+       Flakes[i].erase();
       Flakes[i].lookDown();
-      Flakes[i].move();
+     Flakes[i].move();
       Flakes[i].show();
     }
 }
@@ -50,8 +50,9 @@ class Snowflake
   
   public Snowflake()
     {
-      myY = myY +(int)(Math.random()*30)+10;
+      myY = myY +(int)(Math.random()*-500)+10;
       myX = myX +(int)(Math.random()*499)+1;
+      isMoving = true;
      
     }
   
@@ -69,8 +70,8 @@ class Snowflake
   
     //for(int i =0; i < Flakes.length; i++) use || 
         if(myX<=500||get (myX,myY) == color (0,0,54))
-         {isMoving = false;}
-        else{ isMoving = true;}
+         /*{isMoving = false;}*/
+        { isMoving = true;}
    
 
   }
@@ -78,8 +79,9 @@ class Snowflake
   void erase()
   {
     noStroke();
-   fill(225);
+   fill(9,0,54);
    ellipse(myX,myY, 10, 10);
+
   }
   
   void move()
@@ -94,8 +96,9 @@ class Snowflake
   {
     //which checks if the `y` coordinate is off the bottom of the screen.
     //If it is, set `y` to 0 and generate a new random `x` coordinate
-    
-  }
+    if (myY<=500)
+      {  myY =0;
+         myX = myX +(int)(Math.random()*499)+1; }
 }
 
 

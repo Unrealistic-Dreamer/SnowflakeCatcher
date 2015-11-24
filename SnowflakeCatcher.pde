@@ -1,5 +1,5 @@
 Snowflake[]Flakes;
-int Snowflake, myX,myY;
+int snowFall, myX,myY;
 
 void setup()
 {

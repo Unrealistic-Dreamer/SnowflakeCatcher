@@ -29,16 +29,18 @@ void draw()
     for (int i=1; i< Flakes.length; i++)
     { 
        Flakes[i].erase();
-      Flakes[i].lookDown();
-     Flakes[i].move();
-      Flakes[i].show();
+        Flakes[i].lookDown();
+         Flakes[i].move();
+        Flakes[i].show();
+        Flakes[i].wrap();
     }
 }
 
 
 void mouseDragged()
 {
-  //your code here
+  fill(200,0,0);
+  ellipse(mouseX,mouseY,8,8);
 }
 
 
@@ -46,7 +48,6 @@ class Snowflake
 {
   int myX, myY;
   boolean isMoving;
-  //class member variable declarations
   
   public Snowflake()
     {
@@ -63,42 +64,39 @@ class Snowflake
     }
   
   void lookDown()
-    {//checks if `y` is between the top and bottom of the screen,
-     //and the position just below (x,y) is not black. 
-     //If so, set `isMoving` to `false`; otherwise set `isMoving` to `true` 
-    //your code here  b
-  
-    //for(int i =0; i < Flakes.length; i++) use || 
-        if(myX<=500||get (myX,myY) == color (0,0,54))
-         /*{isMoving = false;}*/
-        { isMoving = true;}
-   
-
-  }
+    {
+      if(get(myX,myY+8) == color(200,0,0))
+      {
+        isMoving=false;
+      }
+    else
+    {
+      isMoving=true;
+    } 
+      if(myY>=500)
+        { isMoving = false;}
+    }
   
   void erase()
-  {
-    noStroke();
-   fill(9,0,54);
-   ellipse(myX,myY, 10, 10);
+   {
+      noStroke();
+      fill(9,0,54);
+      ellipse(myX,myY, 10, 10);
+      isMoving=true;
 
-  }
+   }
   
   void move()
   {
-    if(isMoving==true){
-      myY=myY+2;
-
-    }
+    if(isMoving==true)
+    {myY=myY+2;}
   }
   
   void wrap()
   {
-    //which checks if the `y` coordinate is off the bottom of the screen.
-    //If it is, set `y` to 0 and generate a new random `x` coordinate
-    if (myY<=500)
-      {  myY =0;
-         myX = myX +(int)(Math.random()*499)+1; }
+    if (isMoving ==false)
+      {myY=0;}
+  }
 }
 
 

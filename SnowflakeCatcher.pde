@@ -14,7 +14,7 @@ void setup()
   ellipse(270,300, 20, 20);
   ellipse(230,300, 20, 20);
 
-  Flakes = new Snowflake[500];
+  Flakes = new Snowflake[300];
   
   for (int i=1; i< Flakes.length; i++)
     {
